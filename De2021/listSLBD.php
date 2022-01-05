@@ -14,7 +14,7 @@ if (isset($_POST['SOLAN'])){
 }
 ?>
 
-<tbody>
+<table>
     <tr>
         <th>Họ tên khách hàng</th>
         <th>Số xe</th>
@@ -27,4 +27,4 @@ if (isset($_POST['SOLAN'])){
             <td><?php echo $row['SOLAN'] ?></td>
         </tr>
     <?php endforeach; ?>
-</tbody>
+</table>

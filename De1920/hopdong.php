@@ -6,12 +6,14 @@ function addHD(){
         $TENHD = $_POST['TENHD'];
         $MAKH =  $_POST['TENKH'];
         $TONGTIEN = $_POST['TONGTIEN'];
-        $result = $conn->prepare("INSERT INTO hopdong (MAHOPDONG, TENHD, MAKH, TONGTIEN) 
-        VALUES (:MAHD, :TENHD, :MAKH, :TONGTIEN)");
+        $NGAYLAP = strval(date('Y-m-d'));
+        $result = $conn->prepare("INSERT INTO hopdong (MAHOPDONG, TENHD, NGAYLAP, MAKH, TONGTIEN) 
+        VALUES (:MAHD, :TENHD, :NGAYLAP, :MAKH, :TONGTIEN)");
         $result->bindParam('MAHD', $MAHD);
         $result->bindParam(':TENHD', $TENHD);
         $result->bindParam(':MAKH', $MAKH);
         $result->bindParam(':TONGTIEN', $TONGTIEN);
+        $result->bindParam(':NGAYLAP', $NGAYLAP);
         $result->execute();
     }
 }
